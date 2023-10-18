@@ -1,0 +1,270 @@
+/* resetting margins and paddings to ensure consistency accross browsers */
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+/* defining root variables */
+:root {
+  /* defining font weights as variables */
+  --small-font: 500;
+  --large-font: 900;
+
+  /* defining colors as variables */
+  --grey: #87879d;
+  --purple: #855fb1;
+  --dark-blue: #28283d;
+  --just-white: #fafafa;
+  --light-blue: #8fe3f9;
+  --clear-pink: #d9b8ff;
+  --almost-pink: #B18BDD;
+  --slate-green: #4d96a9;
+}
+
+/* removing the default border stylings on buttons */
+button {
+  border: none;
+}
+
+/* styling the html body */
+body {
+  width: 100%;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* Hero section styling starts here */
+
+/* styling the page header */
+#hero, #features, #line  {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* styling the logo */
+.logo {
+  width: 7.5rem;
+  height: 1.8rem;
+  margin-top: 4.5rem;
+}
+
+/* styling the hero content container */
+.hero-content-container {
+  width: 100%;
+  display: flex;
+  margin-top: 3.81rem;
+  justify-content: space-between;
+}
+
+/* styling the copy-text */
+.hero-copytext-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* styling the header text */
+.big-text {
+  font-size: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  margin-bottom: 2.13rem;
+  color: var(--dark-blue);
+  font-weight: var(--large-font);
+}
+
+/* styling the copy text */
+.small-text {
+  color: var(--grey);
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  line-height: 1.625rem;
+  font-weight: var(--small-font);
+}
+
+/* putting some margin between the cta-buttons and the catalogue section */
+.hero-cta-buttons {
+  margin-bottom: 7.31rem;
+}
+
+/* styling the hero cta-buttons */
+button {
+  height: 3.7rem;
+  width: 12.1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 1.8rem;
+  line-height: 1.625rem;
+  color: var(--just-white);
+  font-weight: var(--large-font);
+}
+
+/* styling the download button */
+#download-button {
+  margin-right: 1rem;
+  background-color: var(--slate-green);
+}
+
+/* stlying the version number */
+#version-number {
+  color: var(--light-blue);
+}
+
+/* styling the info button */
+#info-button {
+  background-color: var(--purple);
+}
+
+/* styling the buffer vertical line & circle */
+.vertical-line {
+  width: 0.065rem;
+  height: 5.25rem;
+  background-color: var(--grey);
+}
+
+.circle {
+  display: flex;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1rem;
+  color: var(--grey);
+  border-radius: 50%;
+  margin-bottom: 4rem;
+  align-items: center;
+  line-height: 1.625rem;
+  justify-content: center;
+  border: 1px solid var(--grey);
+  font-weight: var(--large-font);
+}
+
+
+/* Features section styling starts here */
+
+/* styling the features catalogue container */
+.features-images-container {
+  gap: 1.8rem;
+  width: 70rem;
+  display: grid;
+  margin-bottom: 5rem;
+  grid-template-rows: 15.2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* styling each feature box */
+.feature {
+  border-radius: 0.5rem;
+}
+
+/* styling the individual features */
+.first {
+  background: url(assets/desktop/image-woman-in-videocall.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.second {
+  background: url(assets/desktop/image-women-videochatting.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.third {
+  background: url(assets/desktop/image-men-in-meeting.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fourth {
+  background: url(assets/desktop/image-man-texting.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* styling the features heading */
+.features-big-text {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.625rem;
+  letter-spacing: 0.25rem;
+  color: var(--slate-green);
+  text-transform: uppercase;
+  font-weight: var(--large-font);
+}
+
+/* styling the features main text */
+.features-main-text {
+  width: 27.8rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-style: normal;
+  margin-bottom: 2rem;
+  line-height: 2.75rem;
+  color: var(--dark-blue);
+  font-weight: var(--large-font);
+}
+
+/* styling the features copy container */
+.features-copy-container {
+  width: 33.8rem;
+}
+
+/* styling the features copy text */
+.features-copy-text {
+  color: var(--grey);
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 4.5rem;
+  line-height: 1.625rem;
+  font-weight: var(--small-font);
+}
+
+/* resizing the margin between the buffer circle and the footer */
+.footer-buffer-circle {
+  margin-bottom: 2rem;
+}
+
+
+/* Footer section styling starts here */
+
+/* Styling the footer section container */
+#footer {
+  display: flex;
+  height: 15.25rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--slate-green);
+}
+
+/* styling the footer-bigtext 7 smalltext containers */
+#footer-bigtext-container, #footer-smalltext-container {
+  width: 21.88rem;
+}
+
+/* styling the footer's big text */
+.footer-big-text {
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  color: var(--just-white);
+  font-weight: var(--large-font);
+}
+
+/* styling the footer's small text */
+.footer-small-text {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  color: var(--just-white);
+  font-weight: var(--small-font);
+}
+
+#footer-download-button {
+  background-color: var(--almost-pink);
+}
