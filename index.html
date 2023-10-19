@@ -25,15 +25,18 @@
   <body>
     <!-- hero section -->
     <section id="hero">
+      <!-- brand logo -->
       <div class="brand-logo-container">
         <img src="assets/logo.svg" alt="logo" class="logo">
       </div>
+
+      <!-- hero container-->
       <div class="hero-content-container">
         <div class="left-hero-img">
           <img src="assets/desktop/image-hero-left.png" alt="left hero image">
         </div>
-        <div class="hero-copytext-container">
-          <h2 class="big-text">
+        <div class="hero-text-container">
+          <h2 class="page-heading">
             Group Chat <br/> for Everyone
           </h2>
           <p class="small-text">
@@ -48,10 +51,24 @@
           <img src="assets/desktop/image-hero-right.png" alt="right hero image">
         </div>
       </div>
+
+      <!-- hero-text-container for smaller devices -->
+      <div class="hero-text-container tablet-mobile-only">
+        <h2 class="page-heading">
+          Group Chat <br/> for Everyone
+        </h2>
+        <p class="small-text">
+          Meet makes it easy to connect with others face-to-face virtually<br/>and collaborate across any device.
+        </p>
+        <div class="mobile-hero-cta-buttons">
+          <button id="download-button">Download <span id="version-number">v1.3</span></button>
+          <button id="info-button">What is it?</button>
+        </div>
+      </div>
     </section>
 
-    <!-- buffer line -->
-    <section id="line">
+    <!-- buffer -->
+    <section id="buffer">
       <div class="vertical-line"></div>
       <div class="circle">01</div>
     </section>
@@ -75,8 +92,8 @@
       </div>
     </section>
 
-    <!-- buffer line -->
-    <section id="line">
+    <!-- buffer -->
+    <section id="buffer" class="footer-buffer">
       <div class="vertical-line"></div>
       <div class="circle footer-buffer-circle">02</div>
     </section>
@@ -93,8 +110,8 @@
           Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.
         </p>
       </div>
-      <div class="">
-        <button id="footer-download-button">Download <span id="version-number">v1.3</span></button>
+      <div class="footer-button">
+        <button id="footer-download-button" class="tablet-footer-button mobile-footer-button">Download <span id="version-number">v1.3</span></button>
       </div>
     </section>
 

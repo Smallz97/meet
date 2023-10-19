@@ -30,21 +30,28 @@ button {
 
 /* styling the html body */
 body {
-  width: 100%;
+  /* Hiding the scrollbar for IE, Edge and Firefox browsers, but maintaining scroll functionality */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  
   font-family: "Red Hat Display", sans-serif;
+}
+
+/* Hiding the scrollbar for Chrome, Safari and Opera browsers, but maintaining scroll functionality */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Hero section styling starts here */
 
-/* styling the page header */
-#hero, #features, #line  {
-  width: 100%;
+/*  */
+#hero, #features, #buffer  {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-/* styling the logo */
+/* styling the brand logo */
 .logo {
   width: 7.5rem;
   height: 1.8rem;
@@ -59,15 +66,19 @@ body {
   justify-content: space-between;
 }
 
-/* styling the copy-text */
-.hero-copytext-container {
+/* styling the hero-text container */
+.hero-text-container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-/* styling the header text */
-.big-text {
+.tablet-mobile-only {
+  display: none;
+}
+
+/* styling the page heading */
+.page-heading {
   font-size: 4rem;
   line-height: 4rem;
   text-align: center;
@@ -141,9 +152,6 @@ button {
   font-weight: var(--large-font);
 }
 
-
-/* Features section styling starts here */
-
 /* styling the features catalogue container */
 .features-images-container {
   gap: 1.8rem;
@@ -154,35 +162,26 @@ button {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* styling each feature box */
-.feature {
-  border-radius: 0.5rem;
-}
-
 /* styling the individual features */
 .first {
   background: url(assets/desktop/image-woman-in-videocall.jpg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .second {
   background: url(assets/desktop/image-women-videochatting.jpg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .third {
   background: url(assets/desktop/image-men-in-meeting.jpg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .fourth {
   background: url(assets/desktop/image-man-texting.jpg);
+}
+
+/* styling each feature box */
+.feature {
+  border-radius: 0.5rem;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -229,13 +228,11 @@ button {
 
 /* resizing the margin between the buffer circle and the footer */
 .footer-buffer-circle {
-  margin-bottom: 2rem;
+  margin-bottom: -1.75rem;
+  background-color: white;
 }
 
-
-/* Footer section styling starts here */
-
-/* Styling the footer section container */
+/* styling the footer section container */
 #footer {
   display: flex;
   height: 15.25rem;
@@ -267,4 +264,64 @@ button {
 
 #footer-download-button {
   background-color: var(--almost-pink);
+}
+
+
+/* Styling for mobile responsiveness starts here */
+@media screen and (max-width: 900px) {
+  /* restyling the top margin of the brand logo to optimise viewing on tablet devices */
+  .logo {
+    margin-top: 3rem;
+  }
+
+  /* restyling the hero-content-container to optimise viewing on tablet devices */
+  .hero-content-container {
+    margin-bottom: 4.5rem;
+    justify-content: space-around;
+  }
+
+  /*  */
+  .hero-text-container {
+    display: none;
+  }
+
+  /* restyling the hero-text-container to optimise viewing on tablet devices */
+  .tablet-mobile-only {
+    display: flex;
+  }
+
+  /* restyling the features section */
+  .features-images-container {
+    gap: 0.1rem;
+    width: 47rem;
+    margin-bottom: 2.5rem;
+    grid-template-rows: 10rem;
+  }
+
+  /* readjusting the margin between the cta-buttons and the catalogue section */
+  .mobile-hero-cta-buttons {
+    margin-bottom: 5rem;
+  }
+
+  /* styling the footer section container */
+  #footer {
+    height: 26.75rem;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  /* resizing the footer-bigtext container to optimize viewing on tablet devices */
+  #footer-bigtext-container {
+    width: 28.56rem;
+  }
+
+  /* styling the footer's big text */
+  .footer-big-text {
+    padding-top: 4rem;
+  }
+
+  /* resizing the footer-smalltext container to optimize viewing on tablet devices */
+  #footer-smalltext-container {
+    width: 35.81rem;
+  }
 }
