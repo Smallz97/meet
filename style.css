@@ -14,13 +14,18 @@
 
   /* defining colors as variables */
   --grey: #87879d;
-  --purple: #855fb1;
   --dark-blue: #28283d;
   --just-white: #fafafa;
   --light-blue: #8fe3f9;
   --clear-pink: #d9b8ff;
-  --almost-pink: #B18BDD;
+  
+  /* button colors */
+  --purple: #855fb1;
   --slate-green: #4d96a9;
+  
+  /* hover buttons */
+  --light-green: #71C0D4;
+  --almost-pink: #B18BDD;
 }
 
 /* removing the default border stylings on buttons */
@@ -44,8 +49,7 @@ body::-webkit-scrollbar {
 
 /* Hero section styling starts here */
 
-/*  */
-#hero, #features, #buffer  {
+#hero, #features, #buffer {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -58,7 +62,7 @@ body::-webkit-scrollbar {
   margin-top: 4.5rem;
 }
 
-/* styling the hero content container */
+/* styling the hero-content's container */
 .hero-content-container {
   width: 100%;
   display: flex;
@@ -66,19 +70,15 @@ body::-webkit-scrollbar {
   justify-content: space-between;
 }
 
-/* styling the hero-text container */
+/* styling the hero-text's container */
 .hero-text-container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.tablet-mobile-only {
-  display: none;
-}
-
-/* styling the page heading */
-.page-heading {
+/* styling the hero-page's heading */
+.hero-page-heading {
   font-size: 4rem;
   line-height: 4rem;
   text-align: center;
@@ -87,8 +87,8 @@ body::-webkit-scrollbar {
   font-weight: var(--large-font);
 }
 
-/* styling the copy text */
-.small-text {
+/* styling the hero-pages' copy text */
+.hero-small-text {
   color: var(--grey);
   text-align: center;
   font-size: 1.125rem;
@@ -99,7 +99,12 @@ body::-webkit-scrollbar {
 
 /* putting some margin between the cta-buttons and the catalogue section */
 .hero-cta-buttons {
+  display: flex;
+  width: 25.2rem;
+  height: 3.7rem;
   margin-bottom: 7.31rem;
+  justify-content: space-between;
+  /* background-color: orange; */
 }
 
 /* styling the hero cta-buttons */
@@ -116,8 +121,12 @@ button {
 
 /* styling the download button */
 #download-button {
-  margin-right: 1rem;
   background-color: var(--slate-green);
+}
+
+/* styling the download button on hover */
+#download-button:hover {
+  background-color: var(--light-green);
 }
 
 /* stlying the version number */
@@ -130,13 +139,25 @@ button {
   background-color: var(--purple);
 }
 
-/* styling the buffer vertical line & circle */
+/* styling the info button on hover */
+#info-button:hover {
+  background-color: var(--almost-pink);
+}
+
+
+/* setting the mobile hero-pages's container to not display on large screens */
+.tablet-mobile-only {
+  display: none;
+}
+
+/* styling the buffer's vertical line */
 .vertical-line {
   width: 0.065rem;
   height: 5.25rem;
   background-color: var(--grey);
 }
 
+/* styling the buffer's circle */
 .circle {
   display: flex;
   width: 3.5rem;
@@ -152,7 +173,7 @@ button {
   font-weight: var(--large-font);
 }
 
-/* styling the features catalogue container */
+/* styling the features image-catalogue container */
 .features-images-container {
   gap: 1.8rem;
   width: 70rem;
@@ -162,7 +183,7 @@ button {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* styling the individual features */
+/* styling the individual features with images */
 .first {
   background: url(assets/desktop/image-woman-in-videocall.jpg);
 }
@@ -187,8 +208,8 @@ button {
   background-repeat: no-repeat;
 }
 
-/* styling the features heading */
-.features-big-text {
+/* styling the features' section colored heading */
+.features-colored-text {
   font-size: 1rem;
   text-align: center;
   margin-bottom: 1rem;
@@ -202,9 +223,8 @@ button {
 /* styling the features main text */
 .features-main-text {
   width: 27.8rem;
-  text-align: center;
   font-size: 2.5rem;
-  font-style: normal;
+  text-align: center;
   margin-bottom: 2rem;
   line-height: 2.75rem;
   color: var(--dark-blue);
@@ -262,25 +282,20 @@ button {
   font-weight: var(--small-font);
 }
 
-#footer-download-button {
-  background-color: var(--almost-pink);
-}
-
-
-/* Styling for mobile responsiveness starts here */
+/* styling for mobile responsiveness starts here */
 @media screen and (max-width: 900px) {
   /* restyling the top margin of the brand logo to optimise viewing on tablet devices */
   .logo {
     margin-top: 3rem;
   }
 
-  /* restyling the hero-content-container to optimise viewing on tablet devices */
+  /* re-styling the hero-page's content-container to optimise viewing on tablet devices */
   .hero-content-container {
     margin-bottom: 4.5rem;
     justify-content: space-around;
   }
 
-  /*  */
+  /* setting the text container to not display on non desktop screens */
   .hero-text-container {
     display: none;
   }
@@ -290,7 +305,7 @@ button {
     display: flex;
   }
 
-  /* restyling the features section */
+  /* re-styling the features catalogue container to optimize viewing on tablet devices */
   .features-images-container {
     gap: 0.1rem;
     width: 47rem;
@@ -298,8 +313,8 @@ button {
     grid-template-rows: 10rem;
   }
 
-  /* readjusting the margin between the cta-buttons and the catalogue section */
-  .mobile-hero-cta-buttons {
+  /* readjusting the margin between the cta-buttons and the image catalogue */
+  .hero-cta-buttons {
     margin-bottom: 5rem;
   }
 
@@ -323,5 +338,80 @@ button {
   /* resizing the footer-smalltext container to optimize viewing on tablet devices */
   #footer-smalltext-container {
     width: 35.81rem;
+  }
+}
+
+
+/* styling for mobile responsiveness starts here */
+@media screen and (max-width: 450px) {
+  /* re-styling the hero-page's content container to optimize viewing on mobile devices */
+  .hero-content-container {
+    display: none;
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
+
+  /* re-sizing the hero-page's heading and small-text to optimize viewing on mobile devices */
+  .hero-page-heading, .hero-small-text {
+    width: 22rem;
+  }
+
+  /* re-styling the hero-page's heading to optimize viewing on mobile devices */
+  .hero-page-heading {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+  }
+
+  /* re-styling the hero-page's small-text to optimize viewing on mobile devices */
+  .hero-small-text {
+    font-size: 1rem;
+  }
+
+  /* re-styling the hero-page's cta buttons to optimize viewing on mobile devices */
+  .hero-cta-buttons {
+    display: flex;
+    height: 8.4rem;
+    margin-bottom: 4rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* re-styling the features catalogue to optimize viewing on mobile devices */
+  .features-images-container {
+    width: 26rem;
+    row-gap: 1.5rem;
+    column-gap: 1rem;
+    margin-bottom: 4.5rem;
+    grid-template-rows: 12rem 12rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* re-adjusting the margin on the features' section colored-text to optimize viewing on mobile devices */
+  .features-colored-text {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* re-styling the features' section main-text to optimize viewing on mobile devices */
+  .features-main-text {
+    width: 22rem;
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+
+  /* re-styling the features' copy-container to optimize viewing on mobile devices*/
+  .features-copy-container {
+    width: 22rem;
+  }
+
+  /* re-styling the features' copy-text to optimize viewing on mobile devices */
+  .features-copy-text {
+    font-size: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  /* re-sizing the footer's big-text & small-text container to optimize viewing on tablet devices */
+  #footer-bigtext-container, #footer-smalltext-container {
+    width: 20.43rem;
   }
 }
