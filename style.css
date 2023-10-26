@@ -50,9 +50,16 @@ body::-webkit-scrollbar {
 /* Hero section styling starts here */
 
 #hero, #features, #buffer {
+  width: 100vw;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+/* styling the brand's logo-box */
+.brand-logobox {
+  width: 100vw;
+  text-align: center;
 }
 
 /* styling the brand logo */
@@ -62,23 +69,23 @@ body::-webkit-scrollbar {
   margin-top: 4.5rem;
 }
 
-/* styling the hero-content's container */
-.hero-content-container {
+/* styling the hero-page's content box */
+.hero-contentbox-desktop {
   width: 100%;
   display: flex;
   margin-top: 3.81rem;
   justify-content: space-between;
 }
 
-/* styling the hero-text's container */
-.hero-text-container {
+/* styling the hero-page's textbox */
+.hero-textbox {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 /* styling the hero-page's heading */
-.hero-page-heading {
+.hero-text-heading {
   font-size: 4rem;
   line-height: 4rem;
   text-align: center;
@@ -87,8 +94,8 @@ body::-webkit-scrollbar {
   font-weight: var(--large-font);
 }
 
-/* styling the hero-pages' copy text */
-.hero-small-text {
+/* styling the hero-page's copy-text */
+.hero-smalltext {
   color: var(--grey);
   text-align: center;
   font-size: 1.125rem;
@@ -100,11 +107,10 @@ body::-webkit-scrollbar {
 /* putting some margin between the cta-buttons and the catalogue section */
 .hero-cta-buttons {
   display: flex;
-  width: 25.2rem;
+  width: 21rem;
   height: 3.7rem;
   margin-bottom: 7.31rem;
   justify-content: space-between;
-  /* background-color: orange; */
 }
 
 /* styling the hero cta-buttons */
@@ -120,12 +126,12 @@ button {
 }
 
 /* styling the download button */
-#download-button {
+.download-button {
   background-color: var(--slate-green);
 }
 
 /* styling the download button on hover */
-#download-button:hover {
+.download-button:hover {
   background-color: var(--light-green);
 }
 
@@ -135,18 +141,19 @@ button {
 }
 
 /* styling the info button */
-#info-button {
+.info-button {
+  width: 8.7rem;
   background-color: var(--purple);
 }
 
 /* styling the info button on hover */
-#info-button:hover {
+.info-button:hover {
   background-color: var(--almost-pink);
 }
 
 
 /* setting the mobile hero-pages's container to not display on large screens */
-.tablet-mobile-only {
+.hero-contentbox-mobile {
   display: none;
 }
 
@@ -173,17 +180,17 @@ button {
   font-weight: var(--large-font);
 }
 
-/* styling the features image-catalogue container */
-.features-images-container {
-  gap: 1.8rem;
+/* styling the features images grid */
+.features-grid-container {
+  gap: 1.9rem;
   width: 70rem;
   display: grid;
+  height: 15.2rem;
   margin-bottom: 5rem;
-  grid-template-rows: 15.2rem;
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* styling the individual features with images */
+/* styling the feature boxes with background images */
 .first {
   background: url(assets/desktop/image-woman-in-videocall.jpg);
 }
@@ -202,11 +209,13 @@ button {
 
 /* styling each feature box */
 .feature {
-  border-radius: 0.5rem;
+  height: 100%;
+  border-radius: 3%;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 /* styling the features' section colored heading */
 .features-colored-text {
@@ -258,7 +267,11 @@ button {
   height: 15.25rem;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--slate-green);
+  background-color: #4d96a9;
+  background-image: url(assets/desktop/image-footer.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* styling the footer-bigtext 7 smalltext containers */
@@ -282,50 +295,81 @@ button {
   font-weight: var(--small-font);
 }
 
+/* styling the footer's download button with a purple background */
+.purple {
+  background: var(--purple);
+}
+
 /* styling for mobile responsiveness starts here */
 @media screen and (max-width: 900px) {
-  /* restyling the top margin of the brand logo to optimise viewing on tablet devices */
+  /* re-sizing the top margin on the brand's logo to optimise viewing on tablet devices */
   .logo {
     margin-top: 3rem;
   }
 
-  /* re-styling the hero-page's content-container to optimise viewing on tablet devices */
-  .hero-content-container {
-    margin-bottom: 4.5rem;
-    justify-content: space-around;
-  }
-
-  /* setting the text container to not display on non desktop screens */
-  .hero-text-container {
+  /* setting the desktop's hero-contentbox to not display on tablet devices */
+  .hero-contentbox-desktop {
     display: none;
   }
 
-  /* restyling the hero-text-container to optimise viewing on tablet devices */
-  .tablet-mobile-only {
-    display: flex;
+  /* styling the mobile hero-contentbox */
+  .hero-contentbox-mobile {
+    width: 100vw;
+    display: block;
+    margin-top: 4rem;
   }
 
-  /* re-styling the features catalogue container to optimize viewing on tablet devices */
-  .features-images-container {
-    gap: 0.1rem;
-    width: 47rem;
-    margin-bottom: 2.5rem;
-    grid-template-rows: 10rem;
+  /* styling the mobile hero-imagebox */
+  .mobile-hero-imagebox {
+    height: 21rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(assets/tablet/image-hero.png);
   }
 
-  /* readjusting the margin between the cta-buttons and the image catalogue */
+  /* setting some margin between the hero-image and the mobile textbox */
+  .mobile-textbox {
+    margin-top: 4.5rem;
+  }
+
+  /* re-sizing the margin between the hero heading and the small text to optimize viewing on mobile devices */
+  .hero-text-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  /* re-styling the hero-page's copy-text to optimize viewing on mobile screens */
+  .hero-smalltext {
+    font-size: 1rem;
+  }
+
+  /* re-siziing the margin between the hero cta-buttons and the buffer */
   .hero-cta-buttons {
     margin-bottom: 5rem;
   }
 
-  /* styling the footer section container */
+  /* re-sizing the features catalogue to optimize viewing on mobile devices */
+  .features-grid-container {
+    gap: 0.7rem;
+    width: 48rem;
+    height: 11rem;
+    margin-bottom: 3rem;
+  }
+
+  /* re-sizing the border-radius on each feature in the catalogue to optimize viewing on mobile devices */
+  .feature {
+    border-radius: 4.5%;
+  }
+
+  /* re-styling the footer section container to optimize viewing on mobile devices */
   #footer {
     height: 26.75rem;
     text-align: center;
     flex-direction: column;
+    background-image: url(assets/tablet/image-footer.jpg);
   }
 
-  /* resizing the footer-bigtext container to optimize viewing on tablet devices */
+  /* re-sizing the footer-bigtext container to optimize viewing on mobile devices */
   #footer-bigtext-container {
     width: 28.56rem;
   }
@@ -335,39 +379,46 @@ button {
     padding-top: 4rem;
   }
 
-  /* resizing the footer-smalltext container to optimize viewing on tablet devices */
+  /* resizing the footer-smalltext container to optimize viewing on mobile devices */
   #footer-smalltext-container {
     width: 35.81rem;
   }
 }
 
 
-/* styling for mobile responsiveness starts here */
 @media screen and (max-width: 450px) {
-  /* re-styling the hero-page's content container to optimize viewing on mobile devices */
-  .hero-content-container {
-    display: none;
-    margin-bottom: 3rem;
-    justify-content: center;
+  /* re-styling the mobile hero-imagebox to optimize viewing on smaller mobile phones */
+  .mobile-hero-imagebox {
+    height: 10rem;
   }
 
-  /* re-sizing the hero-page's heading and small-text to optimize viewing on mobile devices */
-  .hero-page-heading, .hero-small-text {
-    width: 22rem;
+  /* re-styling the mobile hero-contentbox to optimize viewing onn smaller mobile phones */
+  .hero-contentbox-mobile {
+    margin-top: 3.4rem;
   }
 
-  /* re-styling the hero-page's heading to optimize viewing on mobile devices */
-  .hero-page-heading {
+  /* re-sizing the margin between the hero-image and the mobile textbox */
+  .mobile-textbox {
+    margin-top: 3rem;
+  }
+
+  /* re-sizing the hero-page's heading and small-text to optimize viewing on mobile phones */
+  .hero-text-heading, .hero-smalltext {
+    width: 20.43rem;
+  }
+
+  /* re-styling the hero-page's heading to optimize viewing on mobile phones */
+  .hero-text-heading {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
 
-  /* re-styling the hero-page's small-text to optimize viewing on mobile devices */
-  .hero-small-text {
+  /* re-styling the hero-page's small-text to optimize viewing on mobile phones */
+  .hero-smalltext {
     font-size: 1rem;
   }
 
-  /* re-styling the hero-page's cta buttons to optimize viewing on mobile devices */
+  /* re-styling the hero-page's cta buttons to optimize viewing on mobile phones */
   .hero-cta-buttons {
     display: flex;
     height: 8.4rem;
@@ -377,41 +428,62 @@ button {
     justify-content: space-between;
   }
 
-  /* re-styling the features catalogue to optimize viewing on mobile devices */
-  .features-images-container {
-    width: 26rem;
-    row-gap: 1.5rem;
-    column-gap: 1rem;
+  /* re-styling the features catalogue to optimize viewing on mobile phones */
+  .features-grid-container {
+    gap: 1rem;
+    width: 20.4rem;
+    height: 19.4rem;
     margin-bottom: 4.5rem;
-    grid-template-rows: 12rem 12rem;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* re-adjusting the margin on the features' section colored-text to optimize viewing on mobile devices */
+  /* re-sizing the border-radius on each feature in the catalogue to optimize viewing on mobile phones */
+  .feature {
+    border-radius: 5%;
+  }
+
+  /* re-adjusting the margin on the features' section colored-text to optimize viewing on mobile phones */
   .features-colored-text {
     margin-bottom: 1.5rem;
   }
   
-  /* re-styling the features' section main-text to optimize viewing on mobile devices */
+  /* re-styling the features' section main-text to optimize viewing on mobile phones */
   .features-main-text {
     width: 22rem;
     font-size: 2rem;
     line-height: 2.25rem;
   }
 
-  /* re-styling the features' copy-container to optimize viewing on mobile devices*/
+  /* re-styling the features' copy-container to optimize viewing on mobile phones */
   .features-copy-container {
     width: 22rem;
   }
 
-  /* re-styling the features' copy-text to optimize viewing on mobile devices */
+  /* re-styling the features' copy-text to optimize viewing on mobile phones */
   .features-copy-text {
     font-size: 1rem;
     margin-bottom: 4rem;
   }
 
-  /* re-sizing the footer's big-text & small-text container to optimize viewing on tablet devices */
+  /* re-styling the footer section with a background image optimized for viewing on mobile phones */
+  #footer {
+    background-image: url(assets/mobile/image-footer.jpg);
+  }
+
+  /* re-sizing the footer's big-text & small-text container to optimize viewing on mobile phones */
   #footer-bigtext-container, #footer-smalltext-container {
     width: 20.43rem;
+  }
+
+  /* re-styling the footer's big-text to optimize viewing on mobile phones */
+  .footer-big-text {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+
+  /* re-styling the footer's small-text to optimize viewing on mobile phones */
+  .footer-small-text {
+    font-size: 1.125rem;
+    line-height: 1.7rem;
   }
 }
