@@ -73,7 +73,7 @@ body::-webkit-scrollbar {
 .hero-contentbox-desktop {
   width: 100%;
   display: flex;
-  margin-top: 6.69rem;
+  margin-top: 6.5rem;
   justify-content: space-between;
 }
 
