@@ -73,7 +73,7 @@ body::-webkit-scrollbar {
 .hero-contentbox-desktop {
   width: 100%;
   display: flex;
-  margin-top: 6.70rem;
+  margin-top: 6.69rem;
   justify-content: space-between;
 }
 
@@ -266,7 +266,7 @@ button {
 /* styling the footer section container */
 #footer {
   display: flex;
-  height: 20rem;
+  height: 19rem;
   align-items: center;
   justify-content: space-around;
   background-image: url("assets/desktop/image-footer.jpg");
