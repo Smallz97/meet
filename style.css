@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
 
 /* Hero section styling starts here */
 
-#hero, #features, #buffer {
+#hero, #features, .buffer {
   width: 100vw;
   display: flex;
   align-items: center;
@@ -66,14 +66,14 @@ body::-webkit-scrollbar {
 .logo {
   width: 7.5rem;
   height: 1.8rem;
-  margin-top: 4.5rem;
+  margin-top: 5rem;
 }
 
 /* styling the hero-page's content box */
 .hero-contentbox-desktop {
   width: 100%;
   display: flex;
-  margin-top: 3.81rem;
+  margin-top: 6.75rem;
   justify-content: space-between;
 }
 
@@ -136,7 +136,7 @@ button {
 }
 
 /* stlying the version number */
-#version-number {
+.version-number {
   color: var(--light-blue);
 }
 
@@ -159,6 +159,7 @@ button {
 
 /* styling the buffer's vertical line */
 .vertical-line {
+  opacity: 0.4;
   width: 0.065rem;
   height: 5.25rem;
   background-color: var(--grey);
@@ -166,6 +167,7 @@ button {
 
 /* styling the buffer's circle */
 .circle {
+  opacity: 0.4;
   display: flex;
   width: 3.5rem;
   height: 3.5rem;
@@ -267,11 +269,12 @@ button {
   height: 15.25rem;
   align-items: center;
   justify-content: space-around;
-  background-color: #4d96a9;
-  background-image: url(assets/desktop/image-footer.jpg);
+  background-image: url("assets/desktop/image-footer.jpg");
+  background-color: var(--slate-green);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-blend-mode: soft-light;
 }
 
 /* styling the footer-bigtext 7 smalltext containers */
