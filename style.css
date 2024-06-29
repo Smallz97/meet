@@ -6,6 +6,24 @@
   box-sizing: border-box;
 }
 
+/* removing the default border stylings on buttons */
+button {
+  border: none;
+}
+
+body {
+  /* hiding the scrollbar for IE, Edge and Firefox browsers, but maintaining scroll functionality */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* hiding the scrollbar for Chrome, Safari and Opera browsers, but maintaining scroll functionality */
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* defining root variables */
 :root {
   /* defining font weights as variables */
@@ -18,102 +36,70 @@
   --just-white: #fafafa;
   --light-blue: #8fe3f9;
   --clear-pink: #d9b8ff;
-  
+  --greyish: rgba(135, 135, 157, 0.25);
+
   /* button colors */
   --purple: #855fb1;
   --slate-green: #4d96a9;
-  
+
   /* hover buttons */
-  --light-green: #71C0D4;
-  --almost-pink: #B18BDD;
+  --light-green: #71c0d4;
+  --almost-pink: #b18bdd;
 }
 
-/* removing the default border stylings on buttons */
-button {
-  border: none;
-}
-
-/* styling the html body */
-body {
-  /* Hiding the scrollbar for IE, Edge and Firefox browsers, but maintaining scroll functionality */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  
-  font-family: "Red Hat Display", sans-serif;
-}
-
-/* Hiding the scrollbar for Chrome, Safari and Opera browsers, but maintaining scroll functionality */
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hero section styling starts here */
-
-#hero, #features, .buffer {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* styling the brand's logo-box */
 .brand-logobox {
-  width: 100vw;
   text-align: center;
 }
 
-/* styling the brand logo */
 .logo {
   width: 7.5rem;
   height: 1.8rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
-/* styling the hero-page's content box */
-.hero-contentbox-desktop {
-  width: 100%;
-  display: flex;
-  margin-top: 6.5rem;
-  justify-content: space-between;
+.hero-contentbox-mobile {
+  margin-top: 3.4rem;
 }
 
-/* styling the hero-page's textbox */
-.hero-textbox {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.mobile-hero-imagebox {
+  height: 10rem;
+  background-image: url("assets/tablet/image-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* styling the hero-page's heading */
+.mobile-textbox {
+  margin-top: 3rem;
+  padding: 0 1.5rem;
+}
+
 .hero-text-heading {
-  font-size: 4rem;
-  line-height: 4rem;
+  font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 2.13rem;
+  line-height: 2.75rem;
+  margin-bottom: 1.5rem;
   color: var(--dark-blue);
   font-weight: var(--large-font);
 }
 
-/* styling the hero-page's copy-text */
 .hero-smalltext {
+  font-size: 1rem;
   color: var(--grey);
   text-align: center;
-  font-size: 1.125rem;
   margin-bottom: 2rem;
   line-height: 1.625rem;
   font-weight: var(--small-font);
 }
 
-/* putting some margin between the cta-buttons and the catalogue section */
 .hero-cta-buttons {
+  gap: 1rem;
   display: flex;
-  width: 21rem;
-  height: 3.7rem;
-  margin-bottom: 7.31rem;
-  justify-content: space-between;
+  margin-bottom: 4rem;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* styling the hero cta-buttons */
 button {
   height: 3.7rem;
   width: 12.1rem;
@@ -125,74 +111,74 @@ button {
   font-weight: var(--large-font);
 }
 
-/* styling the download button */
 .download-button {
   background-color: var(--slate-green);
 }
 
-/* styling the download button on hover */
 .download-button:hover {
   background-color: var(--light-green);
 }
 
-/* stlying the version number */
 .version-number {
   color: var(--light-blue);
 }
 
-/* styling the info button */
 .info-button {
   width: 8.7rem;
   background-color: var(--purple);
 }
 
-/* styling the info button on hover */
 .info-button:hover {
   background-color: var(--almost-pink);
 }
 
-
-/* setting the mobile hero-pages's container to not display on large screens */
-.hero-contentbox-mobile {
+.hero-contentbox-desktop {
   display: none;
 }
 
-/* styling the buffer's vertical line */
-.vertical-line {
-  opacity: 0.4;
-  width: 0.065rem;
-  height: 5.25rem;
-  background-color: var(--grey);
+.buffer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* styling the buffer's circle */
+.vertical-line {
+  opacity: 0.4;
+  height: 5.25rem;
+  width: 0.0625rem;
+  background-color: var(--greyish);
+}
+
 .circle {
   opacity: 0.4;
   display: flex;
   width: 3.5rem;
   height: 3.5rem;
   font-size: 1rem;
-  color: var(--grey);
   border-radius: 50%;
+  color: var(--grey);
   margin-bottom: 4rem;
   align-items: center;
   line-height: 1.625rem;
   justify-content: center;
-  border: 1px solid var(--grey);
   font-weight: var(--large-font);
+  border: 1px solid var(--greyish);
+  background-color: var(--just-white);
 }
 
-/* styling the features images grid */
+#features {
+  padding: 0 1.5rem;
+}
+
 .features-grid-container {
-  gap: 1.9rem;
-  width: 70rem;
+  gap: 1rem;
+  width: 100%;
   display: grid;
-  height: 15.2rem;
-  margin-bottom: 5rem;
-  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 4.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, minmax(8.9375rem, auto));
 }
 
-/* styling the feature boxes with background images */
 .first {
   background: url(assets/desktop/image-woman-in-videocall.jpg);
 }
@@ -209,21 +195,16 @@ button {
   background: url(assets/desktop/image-man-texting.jpg);
 }
 
-/* styling each feature box */
 .feature {
-  height: 100%;
-  border-radius: 3%;
-  background-size: contain;
-  background-position: center;
+  border-radius: 0.5rem;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
-
-/* styling the features' section colored heading */
 .features-colored-text {
   font-size: 1rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   line-height: 1.625rem;
   letter-spacing: 0.25rem;
   color: var(--slate-green);
@@ -231,262 +212,232 @@ button {
   font-weight: var(--large-font);
 }
 
-/* styling the features main text */
 .features-main-text {
-  width: 27.8rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 2rem;
-  line-height: 2.75rem;
+  line-height: 2.25rem;
   color: var(--dark-blue);
   font-weight: var(--large-font);
 }
 
-/* styling the features copy container */
-.features-copy-container {
-  width: 33.8rem;
-}
-
-/* styling the features copy text */
 .features-copy-text {
+  font-size: 1rem;
   color: var(--grey);
   text-align: center;
-  font-size: 1.125rem;
-  margin-bottom: 4.5rem;
+  margin-bottom: 4rem;
   line-height: 1.625rem;
   font-weight: var(--small-font);
 }
 
-/* resizing the margin between the buffer circle and the footer */
 .footer-buffer-circle {
+  opacity: 1;
   margin-bottom: -1.75rem;
-  background-color: white;
 }
 
-/* styling the footer section container */
 #footer {
-  display: flex;
-  height: 19rem;
-  align-items: center;
-  justify-content: space-around;
-  background-image: url("assets/desktop/image-footer.jpg");
-  background-color: var(--slate-green);
+  text-align: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: soft-light;
+  background-color: var(--slate-green);
+  padding: 5.75rem 1.5rem 4.5rem 1.5rem;
+  background-image: url("assets/mobile/image-footer.jpg");
 }
 
-/* styling the footer-bigtext 7 smalltext containers */
-#footer-bigtext-container, #footer-smalltext-container {
-  width: 21.88rem;
-}
-
-/* styling the footer's big text */
 .footer-big-text {
-  font-size: 2.5rem;
-  line-height: 2.75rem;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  margin-bottom: 1.5rem;
   color: var(--just-white);
   font-weight: var(--large-font);
 }
 
-/* styling the footer's small text */
 .footer-small-text {
   font-size: 1.125rem;
-  line-height: 1.625rem;
+  line-height: 1.7rem;
+  margin-bottom: 2rem;
   color: var(--just-white);
   font-weight: var(--small-font);
 }
 
-/* styling the footer's download button with a purple background */
 .purple {
   background: var(--purple);
 }
 
-/* styling for mobile responsiveness starts here */
-@media screen and (max-width: 900px) {
-  /* re-sizing the top margin on the brand's logo to optimise viewing on tablet devices */
-  .logo {
-    margin-top: 3rem;
-  }
-
-  /* setting the desktop's hero-contentbox to not display on tablet devices */
-  .hero-contentbox-desktop {
-    display: none;
-  }
-
-  /* styling the mobile hero-contentbox */
-  .hero-contentbox-mobile {
-    width: 100vw;
-    display: block;
-    margin-top: 4rem;
-  }
-
-  /* styling the mobile hero-imagebox */
-  .mobile-hero-imagebox {
-    height: 21rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(assets/tablet/image-hero.png);
-  }
-
-  /* setting some margin between the hero-image and the mobile textbox */
-  .mobile-textbox {
-    margin-top: 4.5rem;
-  }
-
-  /* re-sizing the margin between the hero heading and the small text to optimize viewing on mobile devices */
-  .hero-text-heading {
-    margin-bottom: 1.5rem;
-  }
-
-  /* re-styling the hero-page's copy-text to optimize viewing on mobile screens */
-  .hero-smalltext {
-    font-size: 1rem;
-  }
-
-  /* re-siziing the margin between the hero cta-buttons and the buffer */
-  .hero-cta-buttons {
-    margin-bottom: 5rem;
-  }
-
-  /* re-sizing the features catalogue to optimize viewing on mobile devices */
-  .features-grid-container {
-    gap: 0.7rem;
-    width: 48rem;
-    height: 11rem;
-    margin-bottom: 3rem;
-  }
-
-  /* re-sizing the border-radius on each feature in the catalogue to optimize viewing on mobile devices */
-  .feature {
-    border-radius: 4.5%;
-  }
-
-  /* re-styling the footer section container to optimize viewing on mobile devices */
-  #footer {
-    height: 26.75rem;
-    text-align: center;
-    flex-direction: column;
-    background-image: url(assets/tablet/image-footer.jpg);
-  }
-
-  /* re-sizing the footer-bigtext container to optimize viewing on mobile devices */
-  #footer-bigtext-container {
-    width: 28.56rem;
-  }
-
-  /* styling the footer's big text */
-  .footer-big-text {
-    padding-top: 4rem;
-  }
-
-  /* resizing the footer-smalltext container to optimize viewing on mobile devices */
-  #footer-smalltext-container {
-    width: 35.81rem;
-  }
+/*  */
+#version-number {
+  color: var(--clear-pink);
 }
 
-
-@media screen and (max-width: 450px) {
-  /* re-styling the mobile hero-imagebox to optimize viewing on smaller mobile phones */
-  .mobile-hero-imagebox {
-    height: 10rem;
-  }
-
-  /* re-styling the mobile hero-contentbox to optimize viewing onn smaller mobile phones */
+@media screen and (min-width: 45rem) {
   .hero-contentbox-mobile {
-    margin-top: 3.4rem;
-  }
-
-  /* re-sizing the margin between the hero-image and the mobile textbox */
-  .mobile-textbox {
     margin-top: 3rem;
   }
 
-  /* re-sizing the hero-page's heading and small-text to optimize viewing on mobile phones */
-  .hero-text-heading, .hero-smalltext {
-    width: 20.43rem;
+  .mobile-hero-imagebox {
+    height: 21rem;
   }
 
-  /* re-styling the hero-page's heading to optimize viewing on mobile phones */
+  .mobile-textbox {
+    margin-top: 4.5rem;
+    padding: 0 9.69rem;
+  }
+
   .hero-text-heading {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .hero-cta-buttons {
+    margin-bottom: 5rem;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .circle {
+    margin-bottom: 4.2rem;
+  }
+
+  #features {
+    padding: 0 2.22rem;
+  }
+
+  .features-grid-container {
+    gap: 0.69rem;
+    margin-bottom: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(9.75rem, auto);
+  }
+
+  .features-copy-heading {
+    padding: 0 7.84rem;
+  }
+
+  .features-colored-text {
+    margin-bottom: 1rem;
+  }
+
+  .features-main-text {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
 
-  /* re-styling the hero-page's small-text to optimize viewing on mobile phones */
-  .hero-smalltext {
-    font-size: 1rem;
+  .features-copy-container {
+    padding: 0 3.9rem;
   }
 
-  /* re-styling the hero-page's cta buttons to optimize viewing on mobile phones */
-  .hero-cta-buttons {
+  .features-copy-text {
+    margin-bottom: 5rem;
+  }
+
+  .footer-buffer-circle {
+    margin-bottom: -1.75rem;
+  }
+
+  #footer {
+    padding: 5.75rem 6.12rem 4.13rem 6.12rem;
+    background-image: url("assets/tablet/image-footer.jpg");
+  }
+
+  #footer-bigtext-container {
+    padding: 0 3.62rem;
+  }
+
+  .footer-big-text {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 2.75rem;
+  }
+
+  .footer-small-text {
+    line-height: 1.625rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  .logo {
+    margin-top: 5rem;
+  }
+
+  .hero-contentbox-mobile {
+    display: none;
+  }
+
+  .hero-contentbox-desktop {
+    width: 100%;
     display: flex;
-    height: 8.4rem;
-    margin-bottom: 4rem;
-    align-items: center;
-    flex-direction: column;
+    margin-top: 3.81rem;
     justify-content: space-between;
   }
 
-  /* re-styling the features catalogue to optimize viewing on mobile phones */
-  .features-grid-container {
-    gap: 1rem;
-    width: 20.4rem;
-    height: 19.4rem;
-    margin-bottom: 4.5rem;
-    grid-template-columns: repeat(2, 1fr);
+  .hero-contentbox-desktop .hero-textbox {
+    margin-top: 2.94rem;
   }
 
-  /* re-sizing the border-radius on each feature in the catalogue to optimize viewing on mobile phones */
-  .feature {
-    border-radius: 5%;
+  .hero-text-heading {
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 2.12rem;
   }
 
-  /* re-adjusting the margin on the features' section colored-text to optimize viewing on mobile phones */
-  .features-colored-text {
-    margin-bottom: 1.5rem;
-  }
-  
-  /* re-styling the features' section main-text to optimize viewing on mobile phones */
-  .features-main-text {
-    width: 22rem;
-    font-size: 2rem;
-    line-height: 2.25rem;
-  }
-
-  /* re-styling the features' copy-container to optimize viewing on mobile phones */
-  .features-copy-container {
-    width: 22rem;
-  }
-
-  /* re-styling the features' copy-text to optimize viewing on mobile phones */
-  .features-copy-text {
-    font-size: 1rem;
-    margin-bottom: 4rem;
-  }
-
-  /* re-styling the footer section with a background image optimized for viewing on mobile phones */
-  #footer {
-    background-image: url(assets/mobile/image-footer.jpg);
-  }
-
-  /* re-sizing the footer's big-text & small-text container to optimize viewing on mobile phones */
-  #footer-bigtext-container, #footer-smalltext-container {
-    width: 20.43rem;
-  }
-
-  /* re-styling the footer's big-text to optimize viewing on mobile phones */
-  .footer-big-text {
-    font-size: 2rem;
-    line-height: 2.25rem;
-  }
-
-  /* re-styling the footer's small-text to optimize viewing on mobile phones */
-  .footer-small-text {
+  .hero-smalltext {
     font-size: 1.125rem;
-    line-height: 1.7rem;
+  }
+
+  .hero-contentbox-desktop .right-hero-img {
+    margin-top: 3.44rem;
+  }
+
+  .hero-cta-buttons {
+    margin-bottom: 7.31rem;
+  }
+
+  #features {
+    padding: 0 9.88rem;
+  }
+
+  .features-grid-container {
+    gap: 1.9rem;
+    margin-bottom: 5rem;
+    grid-template-rows: minmax(15.125rem, auto);
+  }
+
+  .features-copy-heading,
+  .features-copy-container {
+    padding: 0 18.24rem;
+  }
+
+  .features-copy-text {
+    font-size: 1.125rem;
+    margin-bottom: 4.5rem;
+  }
+
+  #footer {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.25rem 9.88rem 6.5rem 9.88rem;
+    background-image: url("assets/desktop/image-footer.jpg");
+  }
+
+  #footer-bigtext-container {
+    padding: 0;
+    width: 24.3055%;
+  }
+
+  #footer-smalltext-container {
+    width: 24.3055%;
+  }
+
+  .footer-big-text {
+    margin-bottom: 0;
+  }
+
+  .footer-small-text {
+    margin-bottom: 0;
   }
 }
